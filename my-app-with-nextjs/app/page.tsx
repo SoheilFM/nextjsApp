@@ -4,7 +4,9 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 import Header from '@/components/Header';
 const getData = async () => {
-    const data = await fetch('https://www.reddit.com/.json');
+    const data = await fetch('https://www.reddit.com/.json', {
+        cache: 'no-store',
+    });
     return data.json();
 };
 export default async function Home() {
